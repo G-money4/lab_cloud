@@ -39,7 +39,7 @@ REPORT_PATH = REPO_ROOT / "submission" / "phase0_report.json"
 # --------------------------------------------------------------------------- #
 def parse_gcloud_config(raw: str) -> dict:
     if not raw:
-        return {"core":{"account":"", "project":""}}
+        return {"account":"", "project":""}
     
     try:
         data = json.loads(raw)
