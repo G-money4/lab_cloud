@@ -3,6 +3,7 @@
 # commit their submission report(s).
 
 # Python
+env_clouds
 .venv/
 venv/
 __pycache__/
