@@ -25,8 +25,9 @@ def build_echo(message: str) -> dict:
 
     Must return exactly ``{"echo": <message>, "length": <len of message>}``.
     """
-    # TODO: return {"echo": message, "length": len(message)}
-    raise NotImplementedError("Phase 1: implement build_echo()")
+    if not isinstance(message, str):
+        raise TypeError("message must be of type str")
+    return {"echo":message, "length":len(message)}
 
 
 def extract_message(args, json_body) -> str | None:
@@ -34,14 +35,15 @@ def extract_message(args, json_body) -> str | None:
 
     Accept either a query parameter ``msg`` (GET) or a JSON body ``{"message": ...}``
     (POST). Return the string, or ``None`` if neither is present.
-
-    Args:
-        args: request.args (a mapping with ``.get``), e.g. ``{"msg": "hi"}``.
-        json_body: parsed JSON body or ``None``, e.g. ``{"message": "hi"}``.
     """
-    # TODO: return args["msg"] if present, else json_body["message"] if present,
-    #       else None. Use .get() so missing keys don't raise.
-    raise NotImplementedError("Phase 1: implement extract_message()")
+    if args and "msg" in args:
+        return args.get("msg")
+
+    if isinstance(json_body, dict) and "message" in json_body:
+        return json_body.get("message")
+
+    # 3. Aucun des deux n'est présent
+    return None
 
 
 # --------------------------------------------------------------------------- #
