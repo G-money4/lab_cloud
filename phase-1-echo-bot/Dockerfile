@@ -23,4 +23,4 @@ ENV PORT=8080
 EXPOSE 8080
 # TODO: set the CMD to launch gunicorn, binding 0.0.0.0:8080 and serving "app:app". Use 1 worker and 8 threads.
 #       Use the JSON/exec form: CMD ["gunicorn", "--bind", "0.0.0.0:8080", ...]
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "4", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "1", "--threads", "8", "app:app"]
