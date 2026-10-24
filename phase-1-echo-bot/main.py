@@ -22,8 +22,3 @@ def echo(request):
     if message is None:
         return jsonify({"error": "provide ?msg=... or JSON {\"message\": ...}"}), 400
     return jsonify(build_echo(message))
-
-python phase-1-echo-bot/measure.py \
-    --vm       http://<VM_EXTERNAL_IP>:8080 \
-    --cloudrun https://echo-bot-<hash>-<region>.run.app \
-    --function https://$FUNCTION_URL
