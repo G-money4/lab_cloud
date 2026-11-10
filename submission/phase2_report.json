@@ -1,0 +1,30 @@
+{
+  "phase": "2",
+  "environment": {
+    "colab": true
+  },
+  "attention": {
+    "naive_ms": 251.727,
+    "vectorized_ms": 1.179,
+    "speedup": 213.51
+  },
+  "threads": {
+    "1": 2300.247,
+    "2": 2041.796,
+    "4": 2518.667,
+    "8": 2250.35
+  },
+  "devices": {
+    "cpu_ms": 432386.0,
+    "gpu_ms": 13672.2
+  },
+  "training": {
+    "steps": 2000,
+    "final_loss": 1.5012,
+    "param_count": 4935680
+  },
+  "sample": "\nTo cannot would by mother danch in hat\nA put the hath common, the here takes a pleast;\nWhen I toke honour, moreight;\nAnd let a avoid squalk! see the still Clarence\nOf theire: if friend,--\n\nPRINCE EDWA",
+  "model": {
+    "gcs_url": "https://storage.googleapis.com/projet-clouds-eurecom-eurecomgpt/model.safetensors"
+  }
+}
